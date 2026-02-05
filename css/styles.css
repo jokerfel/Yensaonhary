@@ -1,0 +1,638 @@
+/* CSS Variables & Reset */
+:root {
+    --color-primary: #4A5D4E;
+    /* Moss Green */
+    --color-secondary: #8C8C8C;
+    /* Stone Gray */
+    --color-text: #2C2C2C;
+    --color-bg: #F8F5F2;
+    /* Ivory */
+    --color-white: #FFFFFF;
+
+    --font-serif: "Playfair Display", serif;
+    --font-sans: "Inter", sans-serif;
+
+    --glass-bg: rgba(255, 255, 255, 0.2);
+    --glass-border: rgba(255, 255, 255, 0.4);
+    --glass-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 32px;
+    --spacing-xl: 64px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    line-height: 1.6;
+    overflow-x: hidden;
+    padding-bottom: 70px;
+    /* Space for Mobile Bottom Bar */
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-bottom: 0;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-serif);
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Liquid Glass Component */
+.liquid-glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    border-radius: 99px;
+    /* Pill shape for buttons */
+    padding: 12px 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    color: var(--color-primary);
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Fallback for no backdrop-filter */
+@supports not ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+    .liquid-glass {
+        background: rgba(255, 255, 255, 0.85);
+    }
+}
+
+.liquid-glass:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.liquid-glass::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(to right,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.4) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    transform: skewX(-25deg);
+    transition: all 0.5s;
+}
+
+.liquid-glass:hover::before {
+    left: 150%;
+}
+
+.liquid-glass.btn-primary {
+    background: rgba(74, 93, 78, 0.15);
+    /* Tinted with primary */
+    border-color: rgba(74, 93, 78, 0.3);
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* Layout Utility */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: var(--spacing-xl) 0;
+}
+
+.grid {
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+@media (min-width: 768px) {
+    .grid-3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Header */
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s;
+    background: white;
+    /* Ensure bg is white always for clean mobile */
+}
+
+.site-header.scrolled {
+    background: rgba(248, 245, 242, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    position: relative;
+    gap: 10px;
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    /* reduced from 1.5rem for mobile */
+    font-weight: 700;
+    color: var(--color-primary);
+    white-space: nowrap;
+    /* Prevent wrapping */
+    flex-shrink: 0;
+}
+
+/* Hamburger Menu Button */
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+    /* Above nav links */
+    padding: 0;
+    order: 3;
+    /* Move to far right */
+    margin-left: 10px;
+}
+
+.hamburger-menu span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: var(--color-primary);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger Active State (X shape) */
+.hamburger-menu.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Mobile Nav Drawer with Liquid Glass Effect */
+.nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 75%;
+    /* Drawer width */
+    max-width: 300px;
+
+    /* Liquid Glass Effect */
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-left: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Center vertically */
+    align-items: center;
+    /* Center horizontally */
+    gap: 30px;
+    transform: translateX(100%);
+    /* Hidden by default */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 1000;
+    padding: 20px;
+}
+
+.nav-links.active {
+    transform: translateX(0);
+    /* Slide in */
+}
+
+.nav-link {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+/* Mobile Overlay */
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(2px);
+}
+
+.mobile-nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Header Actions (Lang + Buttons) */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    order: 2;
+    /* Put actions before hamburger on mobile */
+    margin-left: auto;
+    /* Push to right, pushing hamburger to edge */
+}
+
+/* CRITICAL: Hide Header Buttons on Mobile */
+.header-actions .liquid-glass {
+    display: none !important;
+}
+
+@media (min-width: 992px) {
+
+    /* Reset Order for Desktop */
+    .logo {
+        font-size: 1.5rem;
+        order: 0;
+    }
+
+    .nav-links {
+        order: 1;
+        /* Nav in middle */
+    }
+
+    .header-actions {
+        order: 2;
+        /* Actions on right */
+        margin-left: 0;
+    }
+
+    .header-inner {
+        height: 90px;
+        justify-content: space-between;
+        /* Reset justify */
+    }
+
+    .hamburger-menu {
+        display: none;
+        /* Hide on Desktop */
+    }
+
+    .nav-links {
+        position: static;
+        height: auto;
+        width: auto;
+        max-width: none;
+        background: transparent;
+        flex-direction: row;
+        transform: none;
+        box-shadow: none;
+        padding: 0;
+        justify-content: flex-start;
+        align-items: center;
+        gap: var(--spacing-md);
+
+        /* Reset Mobile Glass Effect */
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border: none;
+    }
+
+    .nav-link {
+        font-size: 1rem;
+        width: auto;
+        border: none;
+        padding: 0;
+    }
+
+    /* Show Header Buttons on Desktop */
+    .header-actions .liquid-glass {
+        display: inline-flex !important;
+    }
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    padding: 80px 0 100px;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.8;
+}
+
+.hero-content {
+    max-width: 800px;
+    text-align: center;
+    /* Centered on mobile as requested */
+    margin: 0 auto;
+}
+
+
+
+.hero h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+    margin-bottom: var(--spacing-md);
+    padding: 0 10px;
+    /* Add padding to prevent edge touching */
+}
+
+@media (min-width: 768px) {
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+}
+
+.hero-sub {
+    font-size: 1.1rem;
+    color: var(--color-secondary);
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    /* Center badges */
+}
+
+.badge {
+    background: rgba(74, 93, 78, 0.1);
+    color: var(--color-primary);
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(74, 93, 78, 0.2);
+}
+
+/* Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.gallery-item {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    aspect-ratio: 4/3;
+    /* Consistent height */
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.hero-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    /* Center actions */
+    flex-wrap: wrap;
+}
+
+/* Products */
+.product-card {
+    background: var(--color-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image-wrapper {
+    position: relative;
+    padding-top: 100%;
+    /* 1:1 Aspect Ratio */
+    background: #f0f0f0;
+}
+
+.product-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: var(--spacing-md);
+    text-align: center;
+}
+
+.product-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-secondary);
+    margin-bottom: var(--spacing-sm);
+    display: block;
+}
+
+.product-name {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.product-desc {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: var(--spacing-md);
+    min-height: 3em;
+    /* Align cards */
+}
+
+.shipping-note {
+    font-size: 0.8rem;
+    font-style: italic;
+    color: var(--color-secondary);
+    margin-bottom: var(--spacing-md);
+}
+
+/* Features (Why Us) */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.feature-item {
+    text-align: center;
+    padding: var(--spacing-md);
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
+}
+
+/* Footer */
+.site-footer {
+    background: var(--color-primary);
+    color: var(--color-white);
+    padding: 60px 0 30px;
+    text-align: center;
+    position: relative;
+}
+
+.site-footer .container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-brand {
+    max-width: 500px;
+    margin-bottom: 30px;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.footer-stats {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    min-width: 280px;
+    text-align: left;
+    margin-top: 20px;
+}
+
+.footer-disclaimer {
+    font-size: 0.8rem;
+    opacity: 0.7;
+    margin-top: var(--spacing-lg);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 992px) {
+    .footer-brand {
+        margin-bottom: 0;
+        /* Absolute center horizontally */
+    }
+
+    .footer-stats {
+        position: absolute;
+        right: 20px;
+        bottom: 50%;
+        transform: translateY(50%);
+        margin-top: 0;
+    }
+
+    /* Ensure brand stays centered despite stats */
+    .site-footer .container {
+        justify-content: center;
+    }
+}

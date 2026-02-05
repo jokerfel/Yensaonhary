@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yến Sào Nhà Ry | Tinh hoa tự nhiên - Chuẩn mực quà biếu</title>
+    <meta name="description"
+        content="Yến sào thu hoạch từ gia đình, tinh khiết, chuẩn mực. Chuyên Yến chưng sẵn, Yến tinh chế, Yến thô. Hotline: 0986.39.22.00">
+    <meta property="og:title" content="Yến Sào Nhà Ry | Tinh hoa tự nhiên">
+    <meta property="og:description"
+        content="Nguồn gốc rõ ràng - Chọn lọc thủ công - Hương vị tự nhiên. Giao hàng toàn quốc.">
+    <meta property="og:image" content="assets/images/product-soup.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header" id="header">
+        <div class="container header-inner">
+            <a href="#" class="logo">Yến Sào Nhà Ry</a>
+
+            <button class="hamburger-menu" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-links">
+                <a href="#products" class="nav-link" data-i18n="nav.products">Sản phẩm</a>
+                <a href="#why-us" class="nav-link" data-i18n="nav.why_us">Vì sao chọn chúng tôi</a>
+                <a href="#process" class="nav-link" data-i18n="nav.process">Quy trình</a>
+                <a href="#commitments" class="nav-link" data-i18n="nav.commitments">Cam kết</a>
+                <a href="#contact" class="nav-link" data-i18n="nav.contact">Liên hệ</a>
+            </nav>
+
+            <div class="header-actions" style="display: flex; gap: 10px; align-items: center;">
+                <!-- Language Selector -->
+                <select id="lang-select">
+                    <option value="vi">🇻🇳 VI</option>
+                    <option value="en">🇺🇸 EN</option>
+                    <option value="zh">🇨🇳 ZH</option>
+                    <option value="ja">🇯🇵 JA</option>
+                </select>
+
+                <!-- Filled via JS or static -->
+                <a href="#" id="header-cta-zalo" class="liquid-glass" style="padding: 8px 16px; font-size: 0.9rem;">Nhắn
+                    Zalo</a>
+                <a href="#" id="header-cta-call" class="liquid-glass btn-primary"
+                    style="padding: 8px 16px; font-size: 0.9rem;">Gọi 0986.39.22.00</a>
+            </div>
+        </div>
+        <div class="mobile-nav-overlay"></div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <img src="assets/images/hero-bg.png" alt="Yến Sào Background" class="hero-bg">
+        <div class="container hero-content">
+            <h1 data-i18n="hero.title">Yến sào thu hoạch từ gia đình — tinh khiết, chuẩn mực, trang nhã</h1>
+            <div class="hero-sub">
+                <span class="badge" data-i18n="hero.sub1">Nguồn gốc rõ ràng</span>
+                <span class="badge" data-i18n="hero.sub2">Chọn lọc thủ công</span>
+                <span class="badge" data-i18n="hero.sub3">Hương vị tự nhiên</span>
+            </div>
+            <div class="hero-actions">
+                <a href="#products" class="liquid-glass btn-primary">Xem sản phẩm</a>
+                <a href="#contact" class="liquid-glass">Tư vấn nhanh</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section id="products" class="section">
+        <div class="container">
+            <h2 data-i18n="headings.products" style="text-align: center; margin-bottom: 40px; font-size: 2.2rem;">Sản
+                phẩm chủ lực</h2>
+            <div id="product-grid" class="grid grid-3">
+                <!-- Products rendered via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section id="why-us" class="section" style="background: rgba(74, 93, 78, 0.03);">
+        <div class="container">
+            <h2 data-i18n="headings.why_us" style="text-align: center; margin-bottom: 40px;">Vì sao chọn Yến Sào Nhà Ry?
+            </h2>
+            <div id="features-grid" class="features-grid">
+                <!-- Features rendered via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="section">
+        <div class="container">
+            <h2 data-i18n="headings.process" style="text-align: center; margin-bottom: 40px;">Quy trình từ nhà yến đến
+                tay bạn</h2>
+            <div class="grid grid-4"
+                style="text-align: center; display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
+                <div class="process-step">
+                    <div
+                        style="font-size: 1.5rem; font-family: var(--font-serif); color: var(--color-primary); margin-bottom: 10px;">
+                        01</div>
+                    <h3>Thu hoạch</h3>
+                    <p style="font-size: 0.9rem; color: #666;">Định kỳ, đúng độ già</p>
+                </div>
+                <div class="process-step">
+                    <div
+                        style="font-size: 1.5rem; font-family: var(--font-serif); color: var(--color-primary); margin-bottom: 10px;">
+                        02</div>
+                    <h3>Chọn lọc</h3>
+                    <p style="font-size: 0.9rem; color: #666;">Làm sạch thủ công</p>
+                </div>
+                <div class="process-step">
+                    <div
+                        style="font-size: 1.5rem; font-family: var(--font-serif); color: var(--color-primary); margin-bottom: 10px;">
+                        03</div>
+                    <h3>Đóng gói</h3>
+                    <p style="font-size: 0.9rem; color: #666;">Định lượng chuẩn xác</p>
+                </div>
+                <div class="process-step">
+                    <div
+                        style="font-size: 1.5rem; font-family: var(--font-serif); color: var(--color-primary); margin-bottom: 10px;">
+                        04</div>
+                    <h3>Giao hàng</h3>
+                    <p style="font-size: 0.9rem; color: #666;">Nhanh chóng & An toàn</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 20px; font-style: italic; color: var(--color-secondary);">
+                * Với yến chưng sẵn: Chưng theo mẻ, ưu tiên độ tươi và an toàn.
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery (Moments) -->
+    <section id="gallery" class="section" style="background: rgba(255, 255, 255, 0.5);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px; font-family: var(--font-serif);">Khoảnh khắc Nhà Ry</h2>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="assets/images/gallery/image-01.png" alt="Khoảnh khắc Nhà Ry 1" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallery/image-02.png" alt="Khoảnh khắc Nhà Ry 2" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallery/image-03.png" alt="Khoảnh khắc Nhà Ry 3" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallery/image-04.png" alt="Khoảnh khắc Nhà Ry 4" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallery/image-05.png" alt="Khoảnh khắc Nhà Ry 5" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="assets/images/gallery/image-06.png" alt="Khoảnh khắc Nhà Ry 6" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commitments -->
+    <section id="commitments" class="section" style="background: var(--color-white);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">Cam kết chất lượng</h2>
+            <div class="grid grid-3">
+                <div style="padding: 20px; border: 1px solid #eee; border-radius: 8px;">
+                    <h3>Tinh khiết & Tự nhiên</h3>
+                    <p>Không chất bảo quản, giữ trọn dưỡng chất.</p>
+                </div>
+                <div style="padding: 20px; border: 1px solid #eee; border-radius: 8px;">
+                    <h3>Nguồn gốc rõ ràng</h3>
+                    <p>Thu hoạch trực tiếp từ hệ thống nhà yến gia đình.</p>
+                </div>
+                <div style="padding: 20px; border: 1px solid #eee; border-radius: 8px;">
+                    <h3>Hỗ trợ tận tâm</h3>
+                    <p>Tư vấn đúng nhu cầu.</p>
+                </div>
+            </div>
+            <div class="footer-disclaimer" style="text-align: center; margin-top: 20px;">
+                Thông tin mang tính tham khảo, không thay thế tư vấn y khoa.
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="section" style="background: rgba(74, 93, 78, 0.03);">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 40px;">Khách hàng nói gì?</h2>
+            <div class="grid grid-3">
+                <div
+                    style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.02)">
+                    <div style="color: #FFB400; margin-bottom: 10px;">★★★★★</div>
+                    <p style="font-style: italic; margin-bottom: 15px;">"Yến chưng vị rất thanh, không bị ngọt gắt. Bao
+                        bì đẹp, mình mua biếu mẹ rất ưng ý."</p>
+                    <strong>Chị Minh Anh</strong>
+                </div>
+                <div
+                    style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.02)">
+                    <div style="color: #FFB400; margin-bottom: 10px;">★★★★★</div>
+                    <p style="font-style: italic; margin-bottom: 15px;">"Yến thô ít lông, nhặt nhanh. Sợi yến dai ngon.
+                        Sẽ ủng hộ dài dài."</p>
+                    <strong>Anh Tuấn Khang</strong>
+                </div>
+                <div
+                    style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.02)">
+                    <div style="color: #FFB400; margin-bottom: 10px;">★★★★★</div>
+                    <p style="font-style: italic; margin-bottom: 15px;">"Giao hàng nhanh, đóng gói rất cẩn thận. Tư vấn
+                        nhiệt tình."</p>
+                    <strong>Chị Thu Hà</strong>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <div class="container" style="max-width: 800px;">
+            <div style="text-align: center; margin-bottom: 40px;">
+                <h2 style="font-size: 2.5rem;">Liên hệ với Nhà Ry</h2>
+                <p style="color: var(--color-secondary); margin-bottom: 20px;">Để được tư vấn sản phẩm phù hợp nhất với
+                    nhu cầu của bạn.</p>
+                <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap;">
+                    <a href="#" id="contact-zalo" class="liquid-glass btn-primary" style="min-width: 150px;">Nhắn Zalo
+                        ngay</a>
+                    <a href="#" id="contact-facebook" class="liquid-glass" style="min-width: 150px;">Facebook</a>
+                    <a href="#" id="contact-call" class="liquid-glass" style="min-width: 150px;">Gọi điện tư vấn</a>
+                </div>
+            </div>
+
+            <form id="contact-form"
+                style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+                <div class="grid" style="gap: 15px;">
+                    <input type="text" id="name-input" placeholder="Họ và tên"
+                        style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px;">
+                    <input type="tel" id="phone-input" placeholder="Số điện thoại"
+                        style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px;">
+
+                    <div>
+                        <label data-i18n="form.products_label"
+                            style="display: block; margin-bottom: 8px; font-weight: 500;">Sản phẩm quan tâm:</label>
+                        <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                            <label><input type="checkbox" value="Yến chưng"> <span data-i18n="form.y_chung">Yến chưng
+                                    sẵn</span></label>
+                            <label><input type="checkbox" value="Yến tinh chế"> <span data-i18n="form.y_tinh_che">Yến
+                                    tinh chế</span></label>
+                            <label><input type="checkbox" value="Yến thô"> <span data-i18n="form.y_tho">Yến
+                                    thô</span></label>
+                        </div>
+                    </div>
+
+                    <textarea id="note-input" placeholder="Ghi chú thêm" rows="4"
+                        style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px;"></textarea>
+
+                    <button type="submit" class="liquid-glass btn-primary" style="width: 100%; border: none;"
+                        data-i18n="form.submit">Gửi yêu
+                        cầu</button>
+                </div>
+            </form>
+
+            <div style="margin-top: 30px; text-align: center; font-size: 0.9rem; color: #555;">
+                <p><strong>COD toàn quốc:</strong> Yến tinh chế, Yến thô</p>
+                <p><strong>Yến chưng sẵn:</strong> Vui lòng nhắn để kiểm tra khu vực giao</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <!-- Brand Column -->
+            <div class="footer-brand">
+                <div class="logo" style="color: white; margin-bottom: 10px; font-size: 1.8rem;">Yến Sào Nhà Ry</div>
+                <p>Tinh hoa tự nhiên — chuẩn mực quà biếu</p>
+                <div class="footer-nav">
+                    <a href="#products">Sản phẩm</a>
+                    <a href="#contact">Liên hệ</a>
+                    <a href="https://www.facebook.com/yensaonhary" target="_blank">Facebook</a>
+                </div>
+                <p style="font-size: 0.8rem; opacity: 0.5;">&copy; 2018 Yến Sào Nhà Ry. All rights reserved.</p>
+            </div>
+
+            <!-- Stats Column -->
+            <div class="footer-stats">
+                <div style="font-size: 0.85rem; color: rgba(255,255,255,0.9);">
+                    <div style="margin-bottom: 12px; font-family: var(--font-serif); font-size: 1.1rem; color: #fff;">
+                        Thống kê Nhà Ry</div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <div>
+                            <span id="stat-serving" style="display:block; margin-bottom: 4px;">Phục vụ từ: 2018</span>
+                            <span id="stat-online" style="display:block;">Đang xem: ...</span>
+                        </div>
+                        <div style="text-align: right;">
+                            <span id="stat-orders" style="display:block; margin-bottom: 4px;">Đã bán: ...</span>
+                            <span id="stat-customers" style="display:block;">Khách hàng: ...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
