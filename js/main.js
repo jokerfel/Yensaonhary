@@ -136,6 +136,8 @@ function renderProducts() {
             const tag = trans ? trans.tag : p.tag;
             const note = trans ? trans.note : p.shippingNote;
             const ctaText = trans ? trans.cta : p.ctaText;
+            const price = trans && trans.price ? trans.price : (p.priceText || "");
+            const priceNote = p.priceNote || "";
 
             return `
             <div class="product-card">
@@ -146,6 +148,8 @@ function renderProducts() {
                     <span class="product-tag">${tag}</span>
                     <h3 class="product-name">${name}</h3>
                     <p class="product-desc">${desc}</p>
+                    ${price ? `<p class="product-price" style="font-weight: 600; font-size: 1.1rem; margin: 8px 0 4px;">${price}</p>` : ""}
+                    ${priceNote ? `<p class="product-price-note" style="font-size: 0.9rem; color: #666; margin: 0 0 8px;">${priceNote}</p>` : ""}
                     <p class="shipping-note">${note}</p>
                     <a href="${p.ctaLink}" target="_blank" class="liquid-glass btn-primary" style="width:100%; justify-content: center;">
                         ${ctaText}
