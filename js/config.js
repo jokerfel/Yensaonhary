@@ -18,6 +18,9 @@ const config = {
             description: "Tiện dùng, vị đa dạng, phù hợp bồi dưỡng và quà tặng.",
             tag: "Tiện dùng",
             image: "assets/images/product-soup.png",
+            price: 55000,
+            priceText: "55.000đ/hũ 75ml",
+            priceNote: "8 gram yến tươi",
             shippingNote: "Giao theo khu vực phù hợp / vui lòng nhắn để kiểm tra",
             ctaText: "Nhận tư vấn vị",
             ctaLink: "https://zalo.me/0986392200"
@@ -28,6 +31,9 @@ const config = {
             description: "Làm sạch kỹ, sợi yến đẹp, dễ chế biến. Chọn lọc thủ công.",
             tag: "Cao cấp",
             image: "assets/images/product-refined.png",
+            price: 2900000,
+            priceText: "2.900.000đ/lạng (100g)",
+            priceNote: "",
             shippingNote: "COD toàn quốc",
             ctaText: "Nhận báo giá",
             ctaLink: "https://zalo.me/0986392200"
@@ -38,6 +44,9 @@ const config = {
             description: "Ít lông, không rêu, không mốc, giữ nguyên giá trị tự nhiên.",
             tag: "Đặc biệt",
             image: "assets/images/product-raw.png",
+            price: 2000000,
+            priceText: "Từ 2.000.000đ/lạng (100g)",
+            priceNote: "",
             shippingNote: "COD toàn quốc",
             ctaText: "Nhận báo giá",
             ctaLink: "https://zalo.me/0986392200"
@@ -104,9 +113,9 @@ const config = {
                 customers: "Khách hàng: ..."
             },
             products: {
-                p1: { name: "Yến Chưng Sẵn Mix Vị", desc: "Tiện dùng, vị đa dạng, phù hợp bồi dưỡng và quà tặng.", tag: "Tiện dùng", note: "Giao theo khu vực phù hợp / vui lòng nhắn để kiểm tra", cta: "Nhận tư vấn vị" },
-                p2: { name: "Yến Tinh Chế Rút Lông", desc: "Làm sạch kỹ, sợi yến đẹp, dễ chế biến. Chọn lọc thủ công.", tag: "Cao cấp", note: "COD toàn quốc", cta: "Nhận báo giá" },
-                p3: { name: "Yến Thô Đặc Biệt", desc: "Ít lông, không rêu, không mốc, giữ nguyên giá trị tự nhiên.", tag: "Đặc biệt", note: "COD toàn quốc", cta: "Nhận báo giá" }
+                p1: { name: "Yến Chưng Sẵn Mix Vị", desc: "Tiện dùng, vị đa dạng, phù hợp bồi dưỡng và quà tặng.", tag: "Tiện dùng", note: "Giao theo khu vực phù hợp / vui lòng nhắn để kiểm tra", cta: "Nhận tư vấn vị", price: "55.000đ/hũ 75ml" },
+                p2: { name: "Yến Tinh Chế Rút Lông", desc: "Làm sạch kỹ, sợi yến đẹp, dễ chế biến. Chọn lọc thủ công.", tag: "Cao cấp", note: "COD toàn quốc", cta: "Nhận báo giá", price: "2.900.000đ/lạng (100g)" },
+                p3: { name: "Yến Thô Đặc Biệt", desc: "Ít lông, không rêu, không mốc, giữ nguyên giá trị tự nhiên.", tag: "Đặc biệt", note: "COD toàn quốc", cta: "Nhận báo giá", price: "Từ 2.000.000đ/lạng (100g)" }
             },
             features: [
                 "Thu hoạch từ nhà yến gia đình",
